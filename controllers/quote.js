@@ -1,7 +1,6 @@
 // import library to access json file 
 const fs = require('fs');
 
-
 // GET '/quote/:name'
 const getOnequote = (req, res, next) => {
     // define varriables for later use
@@ -9,10 +8,12 @@ const getOnequote = (req, res, next) => {
 
     // open json file
     fs.readFile('./quotes.json', 'utf8', (err, data) => {
+
         // show error if applicable
         if (err){
             console.log(err)
         }
+
         // parse json file and send to user
         else{
             quotes = JSON.parse(data);
@@ -26,7 +27,6 @@ const getOnequote = (req, res, next) => {
         }
     })
 };
-
 
 // export controller functions
 module.exports = {
